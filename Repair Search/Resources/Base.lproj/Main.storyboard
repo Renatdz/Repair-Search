@@ -17,6 +17,47 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="LBJ-YL-838">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="bjW-ta-ig6" customClass="MapViewController" customModule="Repair_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qt2-lU-Hf0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6m-Lo-SPL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.29834878869999998" green="0.42659955890000001" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqM-Gp-P5j">
+                                <rect key="frame" x="301" y="640" width="58" height="58"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="S2q-oh-Kz4"/>
+                                    <constraint firstAttribute="width" constant="58" id="Sl6-4h-6T5"/>
+                                </constraints>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="didTouchOnListButton:" destination="bjW-ta-ig6" eventType="touchUpInside" id="eOv-Qc-A7L"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bIR-os-DPC" firstAttribute="trailing" secondItem="KqM-Gp-P5j" secondAttribute="trailing" constant="16" id="Hxm-cM-Gtm"/>
+                            <constraint firstItem="C6m-Lo-SPL" firstAttribute="top" secondItem="Qt2-lU-Hf0" secondAttribute="top" id="QMi-nY-gnc"/>
+                            <constraint firstAttribute="bottom" secondItem="C6m-Lo-SPL" secondAttribute="bottom" id="jje-lp-94n"/>
+                            <constraint firstItem="C6m-Lo-SPL" firstAttribute="leading" secondItem="bIR-os-DPC" secondAttribute="leading" id="jvc-SA-Emh"/>
+                            <constraint firstItem="C6m-Lo-SPL" firstAttribute="trailing" secondItem="bIR-os-DPC" secondAttribute="trailing" id="ngV-CF-ppZ"/>
+                            <constraint firstItem="bIR-os-DPC" firstAttribute="bottom" secondItem="KqM-Gp-P5j" secondAttribute="bottom" constant="80" id="o69-f8-V9n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bIR-os-DPC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p8Q-UW-RbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1164" y="-105.66502463054188"/>
+        </scene>
         <!--List View Controller-->
         <scene sceneID="ahw-0b-tn2">
             <objects>

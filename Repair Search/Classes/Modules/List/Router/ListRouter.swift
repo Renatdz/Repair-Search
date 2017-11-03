@@ -18,7 +18,7 @@ class ListRouter {
 
 extension ListRouter: ListWireframe {
     
-    static func assembleModule(with window: UIWindow) {
+    static func assembleModule() -> UIViewController {
         let storyboard     = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(ListViewController.self)
         
@@ -30,8 +30,7 @@ extension ListRouter: ListWireframe {
         
         router.viewController = viewController
         
-        window.rootViewController = viewController
-        window.makeKeyAndVisible()
+        return viewController
     }
     
     func presentDetailModule() {

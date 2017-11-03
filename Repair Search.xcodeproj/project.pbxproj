@@ -10,6 +10,12 @@
 		A41E87C41FACF47300FC4074 /* EstablishmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87C31FACF47300FC4074 /* EstablishmentCell.swift */; };
 		A41E87C61FACF55600FC4074 /* Establishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87C51FACF55600FC4074 /* Establishment.swift */; };
 		A41E87C91FACFAE600FC4074 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87C81FACFAE600FC4074 /* Review.swift */; };
+		A41E87D01FAD03AE00FC4074 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87CF1FAD03AE00FC4074 /* MapViewController.swift */; };
+		A41E87D21FAD05A500FC4074 /* MapContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87D11FAD05A500FC4074 /* MapContract.swift */; };
+		A41E87D41FAD05FF00FC4074 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87D31FAD05FF00FC4074 /* MapPresenter.swift */; };
+		A41E87D61FAD063A00FC4074 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87D51FAD063A00FC4074 /* MapRouter.swift */; };
+		A41E87D91FAD07B600FC4074 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87D81FAD07B600FC4074 /* BaseViewController.swift */; };
+		A41E87DC1FAD085900FC4074 /* NavType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87DB1FAD085900FC4074 /* NavType.swift */; };
 		A4D752241FACDF9000050587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752231FACDF9000050587 /* AppDelegate.swift */; };
 		A4D752291FACDF9000050587 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D752271FACDF9000050587 /* Main.storyboard */; };
 		A4D7522B1FACDF9000050587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D7522A1FACDF9000050587 /* Assets.xcassets */; };
@@ -54,6 +60,12 @@
 		A41E87C31FACF47300FC4074 /* EstablishmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentCell.swift; sourceTree = "<group>"; };
 		A41E87C51FACF55600FC4074 /* Establishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Establishment.swift; sourceTree = "<group>"; };
 		A41E87C81FACFAE600FC4074 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		A41E87CF1FAD03AE00FC4074 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A41E87D11FAD05A500FC4074 /* MapContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContract.swift; sourceTree = "<group>"; };
+		A41E87D31FAD05FF00FC4074 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		A41E87D51FAD063A00FC4074 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		A41E87D81FAD07B600FC4074 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A41E87DB1FAD085900FC4074 /* NavType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavType.swift; sourceTree = "<group>"; };
 		A4D752201FACDF9000050587 /* Repair Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Repair Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D752231FACDF9000050587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4D752281FACDF9000050587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +143,65 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		A41E87CA1FAD037600FC4074 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A41E87CB1FAD038600FC4074 /* Contract */,
+				A41E87CC1FAD038E00FC4074 /* Presenter */,
+				A41E87CD1FAD039500FC4074 /* Router */,
+				A41E87CE1FAD039A00FC4074 /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		A41E87CB1FAD038600FC4074 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				A41E87D11FAD05A500FC4074 /* MapContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		A41E87CC1FAD038E00FC4074 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A41E87D31FAD05FF00FC4074 /* MapPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A41E87CD1FAD039500FC4074 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A41E87D51FAD063A00FC4074 /* MapRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A41E87CE1FAD039A00FC4074 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A41E87CF1FAD03AE00FC4074 /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A41E87D71FAD079D00FC4074 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A41E87D81FAD07B600FC4074 /* BaseViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A41E87DA1FAD082900FC4074 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A41E87DB1FAD085900FC4074 /* NavType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		A4D752171FACDF9000050587 = {
 			isa = PBXGroup;
 			children = (
@@ -193,8 +264,10 @@
 			isa = PBXGroup;
 			children = (
 				A41E87C71FACF56000FC4074 /* Entities */,
+				A41E87DA1FAD082900FC4074 /* Enums */,
 				A4D7524B1FACE84700050587 /* Extensions */,
 				A4D752601FACE91400050587 /* Protocols */,
+				A41E87D71FAD079D00FC4074 /* ViewControllers */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -202,6 +275,7 @@
 		A4D752461FACE2EB00050587 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A41E87CA1FAD037600FC4074 /* Map */,
 				A4D752631FACEC1A00050587 /* List */,
 			);
 			path = Modules;
@@ -533,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4D752701FACEE7000050587 /* ListViewController.swift in Sources */,
+				A41E87D41FAD05FF00FC4074 /* MapPresenter.swift in Sources */,
 				A4D752571FACE86100050587 /* UICollectionViewExtension.swift in Sources */,
 				A4D7525B1FACE86100050587 /* ReusableViewExtension.swift in Sources */,
 				A4D752561FACE86100050587 /* UITableViewCellExtension.swift in Sources */,
@@ -544,13 +619,18 @@
 				A4D7525D1FACE86100050587 /* UITableViewHeaderFooterViewExtension.swift in Sources */,
 				A4D752581FACE86100050587 /* UIColorExtension.swift in Sources */,
 				A4D7526C1FACED7E00050587 /* ListRouter.swift in Sources */,
+				A41E87DC1FAD085900FC4074 /* NavType.swift in Sources */,
 				A4D7525C1FACE86100050587 /* NibLoadableViewExtension.swift in Sources */,
+				A41E87D01FAD03AE00FC4074 /* MapViewController.swift in Sources */,
 				A4D752241FACDF9000050587 /* AppDelegate.swift in Sources */,
 				A4D752691FACED1000050587 /* ListPresenter.swift in Sources */,
+				A41E87D61FAD063A00FC4074 /* MapRouter.swift in Sources */,
 				A41E87C41FACF47300FC4074 /* EstablishmentCell.swift in Sources */,
 				A4D752591FACE86100050587 /* UIStoryboardExtension.swift in Sources */,
+				A41E87D91FAD07B600FC4074 /* BaseViewController.swift in Sources */,
 				A4D752651FACEC3000050587 /* ListContract.swift in Sources */,
 				A4D7525E1FACE86100050587 /* UIViewControllerExtension.swift in Sources */,
+				A41E87D21FAD05A500FC4074 /* MapContract.swift in Sources */,
 				A4D7524A1FACE72C00050587 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

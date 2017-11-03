@@ -21,6 +21,6 @@ protocol ListPresentation: class {
 protocol ListWireframe: class {
     weak var viewController: UIViewController? { get set }
     
-    static func assembleModule(with window: UIWindow)
+    static func assembleModule() -> UIViewController
     func presentDetailModule()
 }

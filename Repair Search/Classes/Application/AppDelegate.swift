@@ -27,7 +27,7 @@ extension AppDelegate: UIApplicationDelegate {
         
         // Set initial viewController
         window = UIWindow()
-        ListRouter.assembleModule(with: window!)
+        MapRouter.assembleModule(with: window!)
         
         return true
     }
