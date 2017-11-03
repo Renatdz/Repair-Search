@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
     
     // MARK: - Setups
     
-    func setupNavBar(type: NavType) {
+    func setupNavBar(_ type: NavType) {
         guard let navControl = self.navigationController else {
             return
         }

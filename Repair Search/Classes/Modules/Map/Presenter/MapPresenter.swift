@@ -6,6 +6,8 @@
 //  Copyright © 2017 Renato Mendes. All rights reserved.
 //
 
+import CoreLocation
+
 class MapPresenter {
     
     // MARK: - Properties
@@ -20,8 +22,8 @@ extension MapPresenter: MapPresentation {
         
     }
     
-    func didTouchOnListAction() {
-        router.presentListModule()
+    func didTouchOnListAction(_ coordinates: CLLocationCoordinate2D) {
+        router.presentListModule(coordinates)
     }
     
 }

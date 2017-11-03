@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ListRouter {
     
@@ -18,7 +19,7 @@ class ListRouter {
 
 extension ListRouter: ListWireframe {
     
-    static func assembleModule() -> UIViewController {
+    static func assembleModule(with coordinates: CLLocationCoordinate2D) -> UIViewController {
         let storyboard     = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(ListViewController.self)
         
@@ -26,7 +27,9 @@ extension ListRouter: ListWireframe {
         let router    = ListRouter()
         
         presenter.router         = router
-        viewController.presenter = presenter
+        
+        viewController.presenter   = presenter
+        viewController.coordinates = coordinates
         
         router.viewController = viewController
         

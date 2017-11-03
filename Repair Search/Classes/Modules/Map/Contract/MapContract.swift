@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol MapInterface: class {
     var presenter: MapPresentation! { get set }
@@ -16,12 +17,12 @@ protocol MapPresentation: class {
     var router: MapWireframe! { get set }
     
     func viewDidLoad()
-    func didTouchOnListAction()
+    func didTouchOnListAction(_ coordinates: CLLocationCoordinate2D)
 }
 
 protocol MapWireframe: class {
     weak var viewController: UIViewController? { get set }
     
     static func assembleModule(with window: UIWindow)
-    func presentListModule()
+    func presentListModule(_ coordinates: CLLocationCoordinate2D)
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ListViewController: BaseViewController {
     
@@ -17,11 +18,26 @@ class ListViewController: BaseViewController {
     // MARK: - Properties
     
     var presenter: ListPresentation!
+    var coordinates: CLLocationCoordinate2D!
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set navigationBar
+        setupNavBar(.list)
+        
+        print(coordinates)
+    }
+    
+    // MARK: - Setups
+    
+    override func setupNavBar(_ type: NavType) {
+        super.setupNavBar(type)
+        
+        self.title = "Oficinas"
+        self.navigationItem.largeTitleDisplayMode = .automatic
     }
     
 }
@@ -37,7 +53,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath) as EstablishmentCell
+        let cell = tableView.dequeueReusableCell(for: indexPath) as WorkshopCell
         //cell.setup(with: <#T##Establishment#>)
         
         return cell

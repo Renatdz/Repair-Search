@@ -1,5 +1,5 @@
 //
-//  Establishment.swift
+//  Workshop.swift
 //  Repair Search
 //
 //  Created by Renato Mendes on 03/11/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Establishment {
+struct Workshop {
     
     var id        : String!
     var placeId   : String!

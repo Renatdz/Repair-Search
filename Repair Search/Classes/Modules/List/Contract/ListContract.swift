@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol ListInterface: class {
-    var presenter: ListPresentation! { get set }
+    var presenter: ListPresentation!         { get set }
+    var coordinates: CLLocationCoordinate2D! { get set }
 }
 
 protocol ListPresentation: class {
@@ -21,6 +23,6 @@ protocol ListPresentation: class {
 protocol ListWireframe: class {
     weak var viewController: UIViewController? { get set }
     
-    static func assembleModule() -> UIViewController
+    static func assembleModule(with coordinates: CLLocationCoordinate2D) -> UIViewController
     func presentDetailModule()
 }

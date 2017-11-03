@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MapRouter {
     
@@ -34,8 +35,8 @@ extension MapRouter: MapWireframe {
         window.makeKeyAndVisible()
     }
     
-    func presentListModule() {
-        let listModule    = ListRouter.assembleModule()
+    func presentListModule(_ coordinates: CLLocationCoordinate2D) {
+        let listModule    = ListRouter.assembleModule(with: coordinates)
         let navListModule = UINavigationController(rootViewController: listModule)
         
         viewController?.present(navListModule, animated: true, completion: nil)

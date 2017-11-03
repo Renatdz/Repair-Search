@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A41E87C41FACF47300FC4074 /* EstablishmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87C31FACF47300FC4074 /* EstablishmentCell.swift */; };
-		A41E87C61FACF55600FC4074 /* Establishment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87C51FACF55600FC4074 /* Establishment.swift */; };
+		A41E87C41FACF47300FC4074 /* WorkshopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87C31FACF47300FC4074 /* WorkshopCell.swift */; };
+		A41E87C61FACF55600FC4074 /* Workshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87C51FACF55600FC4074 /* Workshop.swift */; };
 		A41E87C91FACFAE600FC4074 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87C81FACFAE600FC4074 /* Review.swift */; };
 		A41E87D01FAD03AE00FC4074 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87CF1FAD03AE00FC4074 /* MapViewController.swift */; };
 		A41E87D21FAD05A500FC4074 /* MapContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87D11FAD05A500FC4074 /* MapContract.swift */; };
@@ -57,8 +57,8 @@
 		4EA1379EEA69973659DC9107 /* Pods_Repair_Search.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Repair_Search.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58948070FE4C6C12AB2B2D65 /* Pods-Repair SearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Repair SearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Repair SearchTests/Pods-Repair SearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		58A2BDDD5AA93437BA347F63 /* Pods-Repair Search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Repair Search.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Repair Search/Pods-Repair Search.debug.xcconfig"; sourceTree = "<group>"; };
-		A41E87C31FACF47300FC4074 /* EstablishmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentCell.swift; sourceTree = "<group>"; };
-		A41E87C51FACF55600FC4074 /* Establishment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Establishment.swift; sourceTree = "<group>"; };
+		A41E87C31FACF47300FC4074 /* WorkshopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopCell.swift; sourceTree = "<group>"; };
+		A41E87C51FACF55600FC4074 /* Workshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workshop.swift; sourceTree = "<group>"; };
 		A41E87C81FACFAE600FC4074 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		A41E87CF1FAD03AE00FC4074 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A41E87D11FAD05A500FC4074 /* MapContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContract.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		A41E87C71FACF56000FC4074 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				A41E87C51FACF55600FC4074 /* Establishment.swift */,
+				A41E87C51FACF55600FC4074 /* Workshop.swift */,
 				A41E87C81FACFAE600FC4074 /* Review.swift */,
 			);
 			path = Entities;
@@ -363,7 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D7526F1FACEE7000050587 /* ListViewController.swift */,
-				A41E87C31FACF47300FC4074 /* EstablishmentCell.swift */,
+				A41E87C31FACF47300FC4074 /* WorkshopCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -615,7 +615,7 @@
 				A41E87C91FACFAE600FC4074 /* Review.swift in Sources */,
 				A4D7525F1FACE86100050587 /* UITableViewExtension.swift in Sources */,
 				A4D7525A1FACE86100050587 /* UICollectionViewCellExtension.swift in Sources */,
-				A41E87C61FACF55600FC4074 /* Establishment.swift in Sources */,
+				A41E87C61FACF55600FC4074 /* Workshop.swift in Sources */,
 				A4D7525D1FACE86100050587 /* UITableViewHeaderFooterViewExtension.swift in Sources */,
 				A4D752581FACE86100050587 /* UIColorExtension.swift in Sources */,
 				A4D7526C1FACED7E00050587 /* ListRouter.swift in Sources */,
@@ -625,7 +625,7 @@
 				A4D752241FACDF9000050587 /* AppDelegate.swift in Sources */,
 				A4D752691FACED1000050587 /* ListPresenter.swift in Sources */,
 				A41E87D61FAD063A00FC4074 /* MapRouter.swift in Sources */,
-				A41E87C41FACF47300FC4074 /* EstablishmentCell.swift in Sources */,
+				A41E87C41FACF47300FC4074 /* WorkshopCell.swift in Sources */,
 				A4D752591FACE86100050587 /* UIStoryboardExtension.swift in Sources */,
 				A41E87D91FAD07B600FC4074 /* BaseViewController.swift in Sources */,
 				A4D752651FACEC3000050587 /* ListContract.swift in Sources */,

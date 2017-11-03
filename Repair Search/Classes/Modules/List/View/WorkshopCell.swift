@@ -1,5 +1,5 @@
 //
-//  EstablishmentCell.swift
+//  WorkshopCell.swift
 //  Repair Search
 //
 //  Created by Renato Mendes on 03/11/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EstablishmentCell: UITableViewCell {
+class WorkshopCell: UITableViewCell {
 
     @IBOutlet weak var lbl_name: UILabel!
     @IBOutlet weak var lbl_address: UILabel!
@@ -20,11 +20,11 @@ class EstablishmentCell: UITableViewCell {
         // Initialization code
     }
     
-    func setup(with establishment: Establishment) {
-        lbl_name.text    = establishment.name
-        lbl_address.text = establishment.vicinity
+    func setup(with workshop: Workshop) {
+        lbl_name.text    = workshop.name
+        lbl_address.text = workshop.vicinity
         
-        if establishment.openNow == true {
+        if workshop.openNow == true {
             lbl_isOpen.text                = "Aberto"
             lbl_isOpen.textColor           = UIColor.green
             viw_isOpenIcon.backgroundColor = UIColor.green

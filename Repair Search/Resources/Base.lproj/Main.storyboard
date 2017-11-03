@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bjW-ta-ig6">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Map View Controller-->
+        <!--Delegate-->
         <scene sceneID="LBJ-YL-838">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="bjW-ta-ig6" customClass="MapViewController" customModule="Repair_Search" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,18 +25,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6m-Lo-SPL">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6m-Lo-SPL" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" red="0.29834878869999998" green="0.42659955890000001" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bjW-ta-ig6" id="cGc-lg-yfR"/>
+                                </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqM-Gp-P5j">
-                                <rect key="frame" x="301" y="640" width="58" height="58"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqM-Gp-P5j">
+                                <rect key="frame" x="308" y="640" width="58" height="58"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="S2q-oh-Kz4"/>
-                                    <constraint firstAttribute="width" constant="58" id="Sl6-4h-6T5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="58" id="Sl6-4h-6T5"/>
                                 </constraints>
                                 <state key="normal" title="OK"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="29"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTouchOnListButton:" destination="bjW-ta-ig6" eventType="touchUpInside" id="eOv-Qc-A7L"/>
                                 </connections>
@@ -44,15 +53,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bIR-os-DPC" firstAttribute="trailing" secondItem="KqM-Gp-P5j" secondAttribute="trailing" constant="16" id="Hxm-cM-Gtm"/>
+                            <constraint firstItem="bIR-os-DPC" firstAttribute="trailing" secondItem="KqM-Gp-P5j" secondAttribute="trailing" constant="9" id="Hxm-cM-Gtm"/>
                             <constraint firstItem="C6m-Lo-SPL" firstAttribute="top" secondItem="Qt2-lU-Hf0" secondAttribute="top" id="QMi-nY-gnc"/>
                             <constraint firstAttribute="bottom" secondItem="C6m-Lo-SPL" secondAttribute="bottom" id="jje-lp-94n"/>
                             <constraint firstItem="C6m-Lo-SPL" firstAttribute="leading" secondItem="bIR-os-DPC" secondAttribute="leading" id="jvc-SA-Emh"/>
                             <constraint firstItem="C6m-Lo-SPL" firstAttribute="trailing" secondItem="bIR-os-DPC" secondAttribute="trailing" id="ngV-CF-ppZ"/>
                             <constraint firstItem="bIR-os-DPC" firstAttribute="bottom" secondItem="KqM-Gp-P5j" secondAttribute="bottom" constant="80" id="o69-f8-V9n"/>
+                            <constraint firstItem="KqM-Gp-P5j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qt2-lU-Hf0" secondAttribute="leading" constant="20" symbolic="YES" id="qfn-do-wcV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bIR-os-DPC"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="C6m-Lo-SPL" id="59r-NM-ayq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8Q-UW-RbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EstablishmentCell" rowHeight="100" id="YY1-FE-5mU" customClass="EstablishmentCell" customModule="Repair_Search" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WorkshopCell" rowHeight="100" id="YY1-FE-5mU" customClass="WorkshopCell" customModule="Repair_Search" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YY1-FE-5mU" id="M2j-D2-Yxw">
