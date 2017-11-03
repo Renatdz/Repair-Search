@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
@@ -19,7 +21,16 @@ extension AppDelegate: UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // Set Google providers
+        GMSServices.provideAPIKey(GM_API_KEY)
+        GMSPlacesClient.provideAPIKey(GM_API_KEY)
+        
+        // Set initial viewController
         window = UIWindow()
+        
+        
+        
+        window?.makeKeyAndVisible()
         
         return true
     }

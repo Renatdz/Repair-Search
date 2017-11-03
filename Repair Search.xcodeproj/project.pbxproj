@@ -12,6 +12,18 @@
 		A4D7522B1FACDF9000050587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D7522A1FACDF9000050587 /* Assets.xcassets */; };
 		A4D7522E1FACDF9000050587 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D7522C1FACDF9000050587 /* LaunchScreen.storyboard */; };
 		A4D752391FACDF9000050587 /* Repair_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752381FACDF9000050587 /* Repair_SearchTests.swift */; };
+		A4D7524A1FACE72C00050587 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752491FACE72C00050587 /* Constants.swift */; };
+		A4D752561FACE86100050587 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7524C1FACE86000050587 /* UITableViewCellExtension.swift */; };
+		A4D752571FACE86100050587 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7524D1FACE86100050587 /* UICollectionViewExtension.swift */; };
+		A4D752581FACE86100050587 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7524E1FACE86100050587 /* UIColorExtension.swift */; };
+		A4D752591FACE86100050587 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7524F1FACE86100050587 /* UIStoryboardExtension.swift */; };
+		A4D7525A1FACE86100050587 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752501FACE86100050587 /* UICollectionViewCellExtension.swift */; };
+		A4D7525B1FACE86100050587 /* ReusableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752511FACE86100050587 /* ReusableViewExtension.swift */; };
+		A4D7525C1FACE86100050587 /* NibLoadableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752521FACE86100050587 /* NibLoadableViewExtension.swift */; };
+		A4D7525D1FACE86100050587 /* UITableViewHeaderFooterViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752531FACE86100050587 /* UITableViewHeaderFooterViewExtension.swift */; };
+		A4D7525E1FACE86100050587 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752541FACE86100050587 /* UIViewControllerExtension.swift */; };
+		A4D7525F1FACE86100050587 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752551FACE86100050587 /* UITableViewExtension.swift */; };
+		A4D752621FACE92600050587 /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752611FACE92600050587 /* ViewProtocols.swift */; };
 		E8F85899C70B7DEAF2651DDB /* Pods_Repair_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA1379EEA69973659DC9107 /* Pods_Repair_Search.framework */; };
 		EDA32102D063E33270C2CD47 /* Pods_Repair_SearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14549F2C264CBC627A710E38 /* Pods_Repair_SearchTests.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +53,18 @@
 		A4D752341FACDF9000050587 /* Repair SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Repair SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D752381FACDF9000050587 /* Repair_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repair_SearchTests.swift; sourceTree = "<group>"; };
 		A4D7523A1FACDF9000050587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4D752491FACE72C00050587 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A4D7524C1FACE86000050587 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		A4D7524D1FACE86100050587 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		A4D7524E1FACE86100050587 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A4D7524F1FACE86100050587 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		A4D752501FACE86100050587 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
+		A4D752511FACE86100050587 /* ReusableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableViewExtension.swift; sourceTree = "<group>"; };
+		A4D752521FACE86100050587 /* NibLoadableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableViewExtension.swift; sourceTree = "<group>"; };
+		A4D752531FACE86100050587 /* UITableViewHeaderFooterViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewHeaderFooterViewExtension.swift; sourceTree = "<group>"; };
+		A4D752541FACE86100050587 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		A4D752551FACE86100050587 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		A4D752611FACE92600050587 /* ViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
 		DE9D22F5844319B9335F51A7 /* Pods-Repair Search.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Repair Search.release.xcconfig"; path = "Pods/Target Support Files/Pods-Repair Search/Pods-Repair Search.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D752231FACDF9000050587 /* AppDelegate.swift */,
+				A4D752491FACE72C00050587 /* Constants.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -144,6 +169,8 @@
 		A4D752451FACE2DA00050587 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
+				A4D7524B1FACE84700050587 /* Extensions */,
+				A4D752601FACE91400050587 /* Protocols */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -171,6 +198,31 @@
 				A4D7522F1FACDF9000050587 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4D7524B1FACE84700050587 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A4D752521FACE86100050587 /* NibLoadableViewExtension.swift */,
+				A4D752511FACE86100050587 /* ReusableViewExtension.swift */,
+				A4D752501FACE86100050587 /* UICollectionViewCellExtension.swift */,
+				A4D7524D1FACE86100050587 /* UICollectionViewExtension.swift */,
+				A4D7524E1FACE86100050587 /* UIColorExtension.swift */,
+				A4D7524F1FACE86100050587 /* UIStoryboardExtension.swift */,
+				A4D7524C1FACE86000050587 /* UITableViewCellExtension.swift */,
+				A4D752551FACE86100050587 /* UITableViewExtension.swift */,
+				A4D752531FACE86100050587 /* UITableViewHeaderFooterViewExtension.swift */,
+				A4D752541FACE86100050587 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A4D752601FACE91400050587 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A4D752611FACE92600050587 /* ViewProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,7 +447,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D752571FACE86100050587 /* UICollectionViewExtension.swift in Sources */,
+				A4D7525B1FACE86100050587 /* ReusableViewExtension.swift in Sources */,
+				A4D752561FACE86100050587 /* UITableViewCellExtension.swift in Sources */,
+				A4D752621FACE92600050587 /* ViewProtocols.swift in Sources */,
+				A4D7525F1FACE86100050587 /* UITableViewExtension.swift in Sources */,
+				A4D7525A1FACE86100050587 /* UICollectionViewCellExtension.swift in Sources */,
+				A4D7525D1FACE86100050587 /* UITableViewHeaderFooterViewExtension.swift in Sources */,
+				A4D752581FACE86100050587 /* UIColorExtension.swift in Sources */,
+				A4D7525C1FACE86100050587 /* NibLoadableViewExtension.swift in Sources */,
 				A4D752241FACDF9000050587 /* AppDelegate.swift in Sources */,
+				A4D752591FACE86100050587 /* UIStoryboardExtension.swift in Sources */,
+				A4D7525E1FACE86100050587 /* UIViewControllerExtension.swift in Sources */,
+				A4D7524A1FACE72C00050587 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
