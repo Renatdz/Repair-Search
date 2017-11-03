@@ -19,6 +19,7 @@ class ListViewController: BaseViewController {
     
     var presenter: ListPresentation!
     var coordinates: CLLocationCoordinate2D!
+    var workshops: [Workshop]! = []
     
     // MARK: - Lifecycle
     
@@ -28,7 +29,8 @@ class ListViewController: BaseViewController {
         // Set navigationBar
         setupNavBar(.list)
         
-        print(coordinates)
+        // Call presenter viewDidLoad
+        presenter.viewDidLoad(coordinates)
     }
     
     // MARK: - Setups
@@ -44,17 +46,32 @@ class ListViewController: BaseViewController {
 
 extension ListViewController: ListInterface {
     
+    func showListContent(_ workshops: [Workshop]) {
+        let (start, end) = (self.workshops.count, workshops.count + self.workshops.count)
+        let indexPaths = (start..<end).map { return IndexPath(row: $0, section: 0) }
+        
+        self.workshops.append(contentsOf: workshops)
+        
+        tableView.performBatchUpdates({ () -> Void in
+            self.tableView.insertRows(at: indexPaths, with: .automatic)
+        }, completion: nil)
+    }
+    
+    func showNoContentView() {
+        
+    }
+    
 }
 
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return workshops.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as WorkshopCell
-        //cell.setup(with: <#T##Establishment#>)
+        cell.setup(with: workshops[indexPath.row])
         
         return cell
     }

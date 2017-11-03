@@ -61,8 +61,19 @@ class MapViewController: BaseViewController {
             
             coordinates = myLocation.coordinate
             
-            // get workshops
+            presenter.didRefreshCoordinates(coordinates)
         }
+    }
+    
+    func createMark(workshop: Workshop) {
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(workshop.latitude, workshop.longitude)
+        marker.appearAnimation = .pop
+        marker.icon = UIImage(named:"icon_map_car")
+        marker.title = workshop.name
+        marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.5)
+        marker.map = mapView
+        marker.userData = workshop
     }
     
     // MARK: - Actions
@@ -74,7 +85,18 @@ class MapViewController: BaseViewController {
 }
 
 extension MapViewController: MapInterface {
+
+    func showMapContent(_ workshops: [Workshop]) {
+        for workshop in workshops {
+            DispatchQueue.main.async {
+                self.createMark(workshop: workshop)
+            }
+        }
+    }
     
+    func showNoContentView() {
+        
+    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {

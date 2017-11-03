@@ -23,11 +23,17 @@ extension MapRouter: MapWireframe {
         let storyboard     = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(MapViewController.self)
         
-        let presenter = MapPresenter()
-        let router    = MapRouter()
+        let presenter  = MapPresenter()
+        let interactor = MapInteractor()
+        let router     = MapRouter()
         
-        presenter.router         = router
+        presenter.interactor = interactor
+        presenter.router     = router
+        presenter.interface  = viewController
+        
         viewController.presenter = presenter
+        
+        interactor.output = presenter
         
         router.viewController = viewController
         

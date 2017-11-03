@@ -11,13 +11,31 @@ import CoreLocation
 
 protocol MapInterface: class {
     var presenter: MapPresentation! { get set }
+    
+    func showNoContentView()
+    func showMapContent(_ workshops: [Workshop])
 }
 
 protocol MapPresentation: class {
-    var router: MapWireframe! { get set }
+    weak var interface: MapInterface? { get set }
+    var router: MapWireframe!         { get set }
+    var interactor: MapUseCase!       { get set }
+    var workshops: [Workshop]!        { get set }
     
-    func viewDidLoad()
+    func didRefreshCoordinates(_ coordinates: CLLocationCoordinate2D)
     func didTouchOnListAction(_ coordinates: CLLocationCoordinate2D)
+}
+
+protocol MapUseCase: class {
+    weak var output: MapInteractorOutput?     { get set }
+    var placesAPIManager: PlacesAPIManageable! { get set }
+    
+    func fetchMapContent(lat: Double, lng: Double, radius: Double)
+}
+
+protocol MapInteractorOutput: class {
+    func mapContentFetched(_ workshops: [Workshop])
+    func mapContentFetchFailed()
 }
 
 protocol MapWireframe: class {

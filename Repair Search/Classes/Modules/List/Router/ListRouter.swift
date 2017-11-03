@@ -23,13 +23,18 @@ extension ListRouter: ListWireframe {
         let storyboard     = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(ListViewController.self)
         
-        let presenter = ListPresenter()
-        let router    = ListRouter()
+        let presenter  = ListPresenter()
+        let interactor = ListInteractor()
+        let router     = ListRouter()
         
-        presenter.router         = router
+        presenter.interactor = interactor
+        presenter.router     = router
+        presenter.interface  = viewController
         
         viewController.presenter   = presenter
         viewController.coordinates = coordinates
+        
+        interactor.output = presenter
         
         router.viewController = viewController
         

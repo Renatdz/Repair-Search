@@ -16,6 +16,10 @@
 		A41E87D61FAD063A00FC4074 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87D51FAD063A00FC4074 /* MapRouter.swift */; };
 		A41E87D91FAD07B600FC4074 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87D81FAD07B600FC4074 /* BaseViewController.swift */; };
 		A41E87DC1FAD085900FC4074 /* NavType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87DB1FAD085900FC4074 /* NavType.swift */; };
+		A41E87DF1FAD1AE700FC4074 /* PlacesAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87DE1FAD1AE600FC4074 /* PlacesAPIManager.swift */; };
+		A4D356151FAD1CC800BC01DE /* APIManagerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D356141FAD1CC800BC01DE /* APIManagerProtocols.swift */; };
+		A4D356181FAD1F6800BC01DE /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D356171FAD1F6800BC01DE /* ListInteractor.swift */; };
+		A4D3561B1FAD257000BC01DE /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3561A1FAD257000BC01DE /* MapInteractor.swift */; };
 		A4D752241FACDF9000050587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752231FACDF9000050587 /* AppDelegate.swift */; };
 		A4D752291FACDF9000050587 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D752271FACDF9000050587 /* Main.storyboard */; };
 		A4D7522B1FACDF9000050587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D7522A1FACDF9000050587 /* Assets.xcassets */; };
@@ -66,6 +70,10 @@
 		A41E87D51FAD063A00FC4074 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
 		A41E87D81FAD07B600FC4074 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A41E87DB1FAD085900FC4074 /* NavType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavType.swift; sourceTree = "<group>"; };
+		A41E87DE1FAD1AE600FC4074 /* PlacesAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAPIManager.swift; sourceTree = "<group>"; };
+		A4D356141FAD1CC800BC01DE /* APIManagerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocols.swift; sourceTree = "<group>"; };
+		A4D356171FAD1F6800BC01DE /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		A4D3561A1FAD257000BC01DE /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		A4D752201FACDF9000050587 /* Repair Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Repair Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D752231FACDF9000050587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4D752281FACDF9000050587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				A41E87CB1FAD038600FC4074 /* Contract */,
+				A4D356191FAD255F00BC01DE /* Interactor */,
 				A41E87CC1FAD038E00FC4074 /* Presenter */,
 				A41E87CD1FAD039500FC4074 /* Router */,
 				A41E87CE1FAD039A00FC4074 /* View */,
@@ -200,6 +209,30 @@
 				A41E87DB1FAD085900FC4074 /* NavType.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		A41E87DD1FAD1ABD00FC4074 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A41E87DE1FAD1AE600FC4074 /* PlacesAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A4D356161FAD1F5800BC01DE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A4D356171FAD1F6800BC01DE /* ListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A4D356191FAD255F00BC01DE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A4D3561A1FAD257000BC01DE /* MapInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		A4D752171FACDF9000050587 = {
@@ -266,6 +299,7 @@
 				A41E87C71FACF56000FC4074 /* Entities */,
 				A41E87DA1FAD082900FC4074 /* Enums */,
 				A4D7524B1FACE84700050587 /* Extensions */,
+				A41E87DD1FAD1ABD00FC4074 /* Network */,
 				A4D752601FACE91400050587 /* Protocols */,
 				A41E87D71FAD079D00FC4074 /* ViewControllers */,
 			);
@@ -319,6 +353,7 @@
 		A4D752601FACE91400050587 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				A4D356141FAD1CC800BC01DE /* APIManagerProtocols.swift */,
 				A4D752611FACE92600050587 /* ViewProtocols.swift */,
 			);
 			path = Protocols;
@@ -328,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D752661FACEC3A00050587 /* Contract */,
+				A4D356161FAD1F5800BC01DE /* Interactor */,
 				A4D752671FACED0100050587 /* Presenter */,
 				A4D7526A1FACED7000050587 /* Router */,
 				A4D7526E1FACEE5B00050587 /* View */,
@@ -609,6 +645,7 @@
 				A4D752701FACEE7000050587 /* ListViewController.swift in Sources */,
 				A41E87D41FAD05FF00FC4074 /* MapPresenter.swift in Sources */,
 				A4D752571FACE86100050587 /* UICollectionViewExtension.swift in Sources */,
+				A4D3561B1FAD257000BC01DE /* MapInteractor.swift in Sources */,
 				A4D7525B1FACE86100050587 /* ReusableViewExtension.swift in Sources */,
 				A4D752561FACE86100050587 /* UITableViewCellExtension.swift in Sources */,
 				A4D752621FACE92600050587 /* ViewProtocols.swift in Sources */,
@@ -620,11 +657,14 @@
 				A4D752581FACE86100050587 /* UIColorExtension.swift in Sources */,
 				A4D7526C1FACED7E00050587 /* ListRouter.swift in Sources */,
 				A41E87DC1FAD085900FC4074 /* NavType.swift in Sources */,
+				A4D356151FAD1CC800BC01DE /* APIManagerProtocols.swift in Sources */,
+				A4D356181FAD1F6800BC01DE /* ListInteractor.swift in Sources */,
 				A4D7525C1FACE86100050587 /* NibLoadableViewExtension.swift in Sources */,
 				A41E87D01FAD03AE00FC4074 /* MapViewController.swift in Sources */,
 				A4D752241FACDF9000050587 /* AppDelegate.swift in Sources */,
 				A4D752691FACED1000050587 /* ListPresenter.swift in Sources */,
 				A41E87D61FAD063A00FC4074 /* MapRouter.swift in Sources */,
+				A41E87DF1FAD1AE700FC4074 /* PlacesAPIManager.swift in Sources */,
 				A41E87C41FACF47300FC4074 /* WorkshopCell.swift in Sources */,
 				A4D752591FACE86100050587 /* UIStoryboardExtension.swift in Sources */,
 				A41E87D91FAD07B600FC4074 /* BaseViewController.swift in Sources */,

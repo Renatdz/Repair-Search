@@ -12,12 +12,31 @@ import CoreLocation
 protocol ListInterface: class {
     var presenter: ListPresentation!         { get set }
     var coordinates: CLLocationCoordinate2D! { get set }
+    var workshops: [Workshop]!               { get set }
+    
+    func showNoContentView()
+    func showListContent(_ workshops: [Workshop])
 }
 
 protocol ListPresentation: class {
-    var router: ListWireframe! { get set }
+    weak var interface: ListInterface? { get set }
+    var router: ListWireframe!         { get set }
+    var interactor: ListUseCase!       { get set }
+    var workshops: [Workshop]!         { get set }
     
-    func viewDidLoad()
+    func viewDidLoad(_ coordinates: CLLocationCoordinate2D)
+}
+
+protocol ListUseCase: class {
+    weak var output: ListInteractorOutput?     { get set }
+    var placesAPIManager: PlacesAPIManageable! { get set }
+    
+    func fetchListContent(lat: Double, lng: Double, radius: Double)
+}
+
+protocol ListInteractorOutput: class {
+    func listContentFetched(_ workshops: [Workshop])
+    func listContentFetchFailed()
 }
 
 protocol ListWireframe: class {
