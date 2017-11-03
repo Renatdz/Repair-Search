@@ -6,6 +6,10 @@ def project_pods
     # - Used in map
     pod 'GoogleMaps'
     pod 'GooglePlaces'
+    
+    # - Used in all api requests
+    pod 'AlamofireObjectMapper'
+    pod 'AlamofireNetworkActivityIndicator'
 
     # - Used in cells
     pod 'SDWebImage'

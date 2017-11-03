@@ -27,10 +27,7 @@ extension AppDelegate: UIApplicationDelegate {
         
         // Set initial viewController
         window = UIWindow()
-        
-        
-        
-        window?.makeKeyAndVisible()
+        ListRouter.assembleModule(with: window!)
         
         return true
     }
