@@ -17,9 +17,21 @@
 		A41E87D91FAD07B600FC4074 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87D81FAD07B600FC4074 /* BaseViewController.swift */; };
 		A41E87DC1FAD085900FC4074 /* NavType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87DB1FAD085900FC4074 /* NavType.swift */; };
 		A41E87DF1FAD1AE700FC4074 /* PlacesAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E87DE1FAD1AE600FC4074 /* PlacesAPIManager.swift */; };
+		A44C21F01FAD38D6008E7126 /* SizingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44C21EF1FAD38D6008E7126 /* SizingCell.swift */; };
+		A44C21F31FAD3D47008E7126 /* WorkshopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44C21F11FAD3D47008E7126 /* WorkshopHeaderView.swift */; };
+		A44C21F41FAD3D47008E7126 /* WorkshopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44C21F21FAD3D47008E7126 /* WorkshopHeaderView.xib */; };
+		A44C21F61FAD4082008E7126 /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44C21F51FAD4081008E7126 /* FormatDate.swift */; };
+		A44C21F81FAD40B0008E7126 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44C21F71FAD40B0008E7126 /* DateExtension.swift */; };
+		A44C21FA1FAD40EE008E7126 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44C21F91FAD40EE008E7126 /* CALayerExtension.swift */; };
 		A4D356151FAD1CC800BC01DE /* APIManagerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D356141FAD1CC800BC01DE /* APIManagerProtocols.swift */; };
 		A4D356181FAD1F6800BC01DE /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D356171FAD1F6800BC01DE /* ListInteractor.swift */; };
 		A4D3561B1FAD257000BC01DE /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3561A1FAD257000BC01DE /* MapInteractor.swift */; };
+		A4D356241FAD2B0300BC01DE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D356231FAD2B0300BC01DE /* DetailViewController.swift */; };
+		A4D356261FAD2CB500BC01DE /* DetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D356251FAD2CB500BC01DE /* DetailContract.swift */; };
+		A4D356281FAD2D9400BC01DE /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D356271FAD2D9400BC01DE /* DetailInteractor.swift */; };
+		A4D3562A1FAD2DA300BC01DE /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D356291FAD2DA300BC01DE /* DetailPresenter.swift */; };
+		A4D3562C1FAD2DAF00BC01DE /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3562B1FAD2DAF00BC01DE /* DetailRouter.swift */; };
+		A4D3562E1FAD326300BC01DE /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D3562D1FAD326200BC01DE /* ReviewCell.swift */; };
 		A4D752241FACDF9000050587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D752231FACDF9000050587 /* AppDelegate.swift */; };
 		A4D752291FACDF9000050587 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D752271FACDF9000050587 /* Main.storyboard */; };
 		A4D7522B1FACDF9000050587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D7522A1FACDF9000050587 /* Assets.xcassets */; };
@@ -71,9 +83,21 @@
 		A41E87D81FAD07B600FC4074 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A41E87DB1FAD085900FC4074 /* NavType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavType.swift; sourceTree = "<group>"; };
 		A41E87DE1FAD1AE600FC4074 /* PlacesAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAPIManager.swift; sourceTree = "<group>"; };
+		A44C21EF1FAD38D6008E7126 /* SizingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizingCell.swift; sourceTree = "<group>"; };
+		A44C21F11FAD3D47008E7126 /* WorkshopHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkshopHeaderView.swift; sourceTree = "<group>"; };
+		A44C21F21FAD3D47008E7126 /* WorkshopHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkshopHeaderView.xib; sourceTree = "<group>"; };
+		A44C21F51FAD4081008E7126 /* FormatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
+		A44C21F71FAD40B0008E7126 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		A44C21F91FAD40EE008E7126 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		A4D356141FAD1CC800BC01DE /* APIManagerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocols.swift; sourceTree = "<group>"; };
 		A4D356171FAD1F6800BC01DE /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
 		A4D3561A1FAD257000BC01DE /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		A4D356231FAD2B0300BC01DE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A4D356251FAD2CB500BC01DE /* DetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContract.swift; sourceTree = "<group>"; };
+		A4D356271FAD2D9400BC01DE /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		A4D356291FAD2DA300BC01DE /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		A4D3562B1FAD2DAF00BC01DE /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		A4D3562D1FAD326200BC01DE /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		A4D752201FACDF9000050587 /* Repair Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Repair Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D752231FACDF9000050587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4D752281FACDF9000050587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -219,6 +243,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		A44C21EE1FAD38C9008E7126 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A44C21EF1FAD38D6008E7126 /* SizingCell.swift */,
+				A44C21F51FAD4081008E7126 /* FormatDate.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A4D356161FAD1F5800BC01DE /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +266,61 @@
 				A4D3561A1FAD257000BC01DE /* MapInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A4D3561C1FAD2ABC00BC01DE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A4D356211FAD2AE800BC01DE /* Contract */,
+				A4D356201FAD2AE300BC01DE /* Interactor */,
+				A4D3561F1FAD2ADD00BC01DE /* Presenter */,
+				A4D3561E1FAD2AD000BC01DE /* Router */,
+				A4D3561D1FAD2AC900BC01DE /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		A4D3561D1FAD2AC900BC01DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A44C21F11FAD3D47008E7126 /* WorkshopHeaderView.swift */,
+				A44C21F21FAD3D47008E7126 /* WorkshopHeaderView.xib */,
+				A4D356231FAD2B0300BC01DE /* DetailViewController.swift */,
+				A4D3562D1FAD326200BC01DE /* ReviewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4D3561E1FAD2AD000BC01DE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A4D3562B1FAD2DAF00BC01DE /* DetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A4D3561F1FAD2ADD00BC01DE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A4D356291FAD2DA300BC01DE /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A4D356201FAD2AE300BC01DE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A4D356271FAD2D9400BC01DE /* DetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A4D356211FAD2AE800BC01DE /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				A4D356251FAD2CB500BC01DE /* DetailContract.swift */,
+			);
+			path = Contract;
 			sourceTree = "<group>";
 		};
 		A4D752171FACDF9000050587 = {
@@ -301,6 +389,7 @@
 				A4D7524B1FACE84700050587 /* Extensions */,
 				A41E87DD1FAD1ABD00FC4074 /* Network */,
 				A4D752601FACE91400050587 /* Protocols */,
+				A44C21EE1FAD38C9008E7126 /* Utils */,
 				A41E87D71FAD079D00FC4074 /* ViewControllers */,
 			);
 			path = Commom;
@@ -311,6 +400,7 @@
 			children = (
 				A41E87CA1FAD037600FC4074 /* Map */,
 				A4D752631FACEC1A00050587 /* List */,
+				A4D3561C1FAD2ABC00BC01DE /* Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -346,6 +436,8 @@
 				A4D752551FACE86100050587 /* UITableViewExtension.swift */,
 				A4D752531FACE86100050587 /* UITableViewHeaderFooterViewExtension.swift */,
 				A4D752541FACE86100050587 /* UIViewControllerExtension.swift */,
+				A44C21F71FAD40B0008E7126 /* DateExtension.swift */,
+				A44C21F91FAD40EE008E7126 /* CALayerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -496,6 +588,7 @@
 				A4D7522E1FACDF9000050587 /* LaunchScreen.storyboard in Resources */,
 				A4D7522B1FACDF9000050587 /* Assets.xcassets in Resources */,
 				A4D752291FACDF9000050587 /* Main.storyboard in Resources */,
+				A44C21F41FAD3D47008E7126 /* WorkshopHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +648,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
@@ -563,6 +658,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
@@ -600,6 +697,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
@@ -608,6 +707,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
@@ -642,10 +743,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D356261FAD2CB500BC01DE /* DetailContract.swift in Sources */,
+				A44C21F81FAD40B0008E7126 /* DateExtension.swift in Sources */,
+				A44C21F61FAD4082008E7126 /* FormatDate.swift in Sources */,
 				A4D752701FACEE7000050587 /* ListViewController.swift in Sources */,
 				A41E87D41FAD05FF00FC4074 /* MapPresenter.swift in Sources */,
 				A4D752571FACE86100050587 /* UICollectionViewExtension.swift in Sources */,
 				A4D3561B1FAD257000BC01DE /* MapInteractor.swift in Sources */,
+				A4D3562C1FAD2DAF00BC01DE /* DetailRouter.swift in Sources */,
 				A4D7525B1FACE86100050587 /* ReusableViewExtension.swift in Sources */,
 				A4D752561FACE86100050587 /* UITableViewCellExtension.swift in Sources */,
 				A4D752621FACE92600050587 /* ViewProtocols.swift in Sources */,
@@ -653,6 +758,8 @@
 				A4D7525F1FACE86100050587 /* UITableViewExtension.swift in Sources */,
 				A4D7525A1FACE86100050587 /* UICollectionViewCellExtension.swift in Sources */,
 				A41E87C61FACF55600FC4074 /* Workshop.swift in Sources */,
+				A4D3562E1FAD326300BC01DE /* ReviewCell.swift in Sources */,
+				A4D356281FAD2D9400BC01DE /* DetailInteractor.swift in Sources */,
 				A4D7525D1FACE86100050587 /* UITableViewHeaderFooterViewExtension.swift in Sources */,
 				A4D752581FACE86100050587 /* UIColorExtension.swift in Sources */,
 				A4D7526C1FACED7E00050587 /* ListRouter.swift in Sources */,
@@ -661,17 +768,22 @@
 				A4D356181FAD1F6800BC01DE /* ListInteractor.swift in Sources */,
 				A4D7525C1FACE86100050587 /* NibLoadableViewExtension.swift in Sources */,
 				A41E87D01FAD03AE00FC4074 /* MapViewController.swift in Sources */,
+				A4D356241FAD2B0300BC01DE /* DetailViewController.swift in Sources */,
 				A4D752241FACDF9000050587 /* AppDelegate.swift in Sources */,
+				A44C21F31FAD3D47008E7126 /* WorkshopHeaderView.swift in Sources */,
 				A4D752691FACED1000050587 /* ListPresenter.swift in Sources */,
 				A41E87D61FAD063A00FC4074 /* MapRouter.swift in Sources */,
+				A44C21FA1FAD40EE008E7126 /* CALayerExtension.swift in Sources */,
 				A41E87DF1FAD1AE700FC4074 /* PlacesAPIManager.swift in Sources */,
 				A41E87C41FACF47300FC4074 /* WorkshopCell.swift in Sources */,
 				A4D752591FACE86100050587 /* UIStoryboardExtension.swift in Sources */,
 				A41E87D91FAD07B600FC4074 /* BaseViewController.swift in Sources */,
+				A44C21F01FAD38D6008E7126 /* SizingCell.swift in Sources */,
 				A4D752651FACEC3000050587 /* ListContract.swift in Sources */,
 				A4D7525E1FACE86100050587 /* UIViewControllerExtension.swift in Sources */,
 				A41E87D21FAD05A500FC4074 /* MapContract.swift in Sources */,
 				A4D7524A1FACE72C00050587 /* Constants.swift in Sources */,
+				A4D3562A1FAD2DA300BC01DE /* DetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

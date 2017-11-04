@@ -76,4 +76,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelect(workshop: workshops[indexPath.row])
+    }
+    
 }

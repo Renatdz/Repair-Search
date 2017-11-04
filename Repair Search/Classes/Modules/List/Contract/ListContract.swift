@@ -25,6 +25,7 @@ protocol ListPresentation: class {
     var workshops: [Workshop]!         { get set }
     
     func viewDidLoad(_ coordinates: CLLocationCoordinate2D)
+    func didSelect(workshop: Workshop)
 }
 
 protocol ListUseCase: class {
@@ -43,5 +44,5 @@ protocol ListWireframe: class {
     weak var viewController: UIViewController? { get set }
     
     static func assembleModule(with coordinates: CLLocationCoordinate2D) -> UIViewController
-    func presentDetailModule()
+    func presentDetailModule(workshop: Workshop)
 }

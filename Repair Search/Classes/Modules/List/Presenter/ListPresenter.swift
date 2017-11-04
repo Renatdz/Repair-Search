@@ -34,6 +34,10 @@ extension ListPresenter: ListPresentation {
         interactor.fetchListContent(lat: coordinates.latitude, lng: coordinates.longitude, radius: 500)
     }
     
+    func didSelect(workshop: Workshop) {
+        router.presentDetailModule(workshop: workshop)
+    }
+    
 }
 
 extension ListPresenter: ListInteractorOutput {

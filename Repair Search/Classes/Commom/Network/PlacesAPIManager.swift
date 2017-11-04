@@ -37,6 +37,28 @@ struct PlacesAPIManager: PlacesAPIManageable {
         }
     }
     
+    func fetchWorkshop(id: String, complete: @escaping (Workshop?) -> (Void)) {
+        
+        let url = "\(BASE_GM_SERVICE)details/json?placeid=\(id)&key=\(GM_API_KEY)"
+        
+        let request = Alamofire.request(url, headers: nil)
+        request.validate()
+        request.responseJSON() { response in
+            
+            switch response.result {
+            case .success(let json):
+                guard let dict = json as? NSDictionary else {
+                    complete(nil); return
+                }
+                let workshop = Workshop(dict["result"] as! NSDictionary)
+                complete(workshop)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+                complete(nil)
+            }
+        }
+    }
     // MARK: - Aux Funcs
     
     fileprivate func getWorkshops(array: NSArray) -> [Workshop] {

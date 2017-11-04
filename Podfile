@@ -11,6 +11,10 @@ def project_pods
     pod 'AlamofireObjectMapper'
     pod 'AlamofireNetworkActivityIndicator'
 
+    # - Used in UX DetailViewController
+    pod 'GSKStretchyHeaderView'
+    pod 'Cosmos'
+
     # - Used in cells
     pod 'SDWebImage'
 end

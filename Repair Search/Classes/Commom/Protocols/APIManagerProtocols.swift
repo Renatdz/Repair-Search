@@ -8,5 +8,6 @@
 
 protocol PlacesAPIManageable {
     func fetchWorkshops(lat: Double, lng: Double, radius: Double, complete: @escaping ([Workshop]?) -> (Void))
+    func fetchWorkshop(id: String, complete: @escaping (Workshop?) -> (Void))
 }
 
