@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bjW-ta-ig6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bjW-ta-ig6">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -131,7 +131,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fechado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiX-Kw-1Xe">
-                                                    <rect key="frame" x="18" y="56" width="54.666666666666671" height="22"/>
+                                                    <rect key="frame" x="17.999999999999996" y="56" width="54.666666666666657" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="5rh-rj-5Jt"/>
                                                         <constraint firstAttribute="height" constant="22" id="OOf-9J-6jE"/>
@@ -142,7 +142,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="2TW-DH-RzR" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xbu-XP-lRk" secondAttribute="trailing" constant="27" id="4bF-dm-O4X"/>
+                                                <constraint firstItem="2TW-DH-RzR" firstAttribute="leading" secondItem="xbu-XP-lRk" secondAttribute="trailing" constant="27" id="4bF-dm-O4X"/>
                                                 <constraint firstAttribute="trailing" secondItem="DH9-No-Utt" secondAttribute="trailing" constant="15" id="61w-dd-32s"/>
                                                 <constraint firstItem="jiX-Kw-1Xe" firstAttribute="leading" secondItem="M2j-D2-Yxw" secondAttribute="leading" constant="18" id="6c0-yz-Lrp"/>
                                                 <constraint firstItem="DH9-No-Utt" firstAttribute="top" secondItem="M2j-D2-Yxw" secondAttribute="top" constant="21" id="GCf-Io-eZd"/>
@@ -151,7 +151,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="2TW-DH-RzR" secondAttribute="bottom" constant="21.666666666666671" id="POH-Xy-tem"/>
                                                 <constraint firstItem="jiX-Kw-1Xe" firstAttribute="top" secondItem="xbu-XP-lRk" secondAttribute="bottom" constant="10" id="UK6-QL-tiV"/>
                                                 <constraint firstItem="xbu-XP-lRk" firstAttribute="top" secondItem="M2j-D2-Yxw" secondAttribute="top" constant="21" id="fG9-bZ-peY"/>
-                                                <constraint firstItem="DH9-No-Utt" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xbu-XP-lRk" secondAttribute="trailing" constant="27" id="gaJ-oN-alb"/>
+                                                <constraint firstItem="DH9-No-Utt" firstAttribute="leading" secondItem="xbu-XP-lRk" secondAttribute="trailing" constant="27" id="gaJ-oN-alb"/>
                                                 <constraint firstAttribute="trailing" secondItem="2TW-DH-RzR" secondAttribute="trailing" constant="15" id="sp2-fR-UzA"/>
                                             </constraints>
                                         </tableViewCellContentView>

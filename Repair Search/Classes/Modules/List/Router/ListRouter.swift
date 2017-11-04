@@ -46,4 +46,8 @@ extension ListRouter: ListWireframe {
         viewController?.navigationController?.pushViewController(detailModule, animated: true)
     }
     
+    func closeListModule() {
+        viewController?.dismiss(animated: true, completion: nil)
+    }
+    
 }

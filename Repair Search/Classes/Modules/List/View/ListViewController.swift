@@ -40,6 +40,15 @@ class ListViewController: BaseViewController {
         
         self.title = "Oficinas"
         self.navigationItem.largeTitleDisplayMode = .automatic
+        
+        let rightButton = UIBarButtonItem(image: UIImage(named: "icon_close"), style: .plain, target: self, action: #selector(didTouchOnCloseButton))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    // MARK: Actions
+    
+    @objc func didTouchOnCloseButton() {
+        presenter.didTouchOnCloseAction()
     }
     
 }

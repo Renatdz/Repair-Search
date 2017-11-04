@@ -26,6 +26,7 @@ protocol ListPresentation: class {
     
     func viewDidLoad(_ coordinates: CLLocationCoordinate2D)
     func didSelect(workshop: Workshop)
+    func didTouchOnCloseAction()
 }
 
 protocol ListUseCase: class {
@@ -45,4 +46,5 @@ protocol ListWireframe: class {
     
     static func assembleModule(with coordinates: CLLocationCoordinate2D) -> UIViewController
     func presentDetailModule(workshop: Workshop)
+    func closeListModule()
 }

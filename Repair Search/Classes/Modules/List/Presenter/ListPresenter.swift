@@ -38,6 +38,10 @@ extension ListPresenter: ListPresentation {
         router.presentDetailModule(workshop: workshop)
     }
     
+    func didTouchOnCloseAction() {
+        router.closeListModule()
+    }
+    
 }
 
 extension ListPresenter: ListInteractorOutput {
