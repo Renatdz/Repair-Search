@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkshopCell: UITableViewCell {
+class WorkshopCell: UICollectionViewCell {
 
     @IBOutlet weak var lbl_name: UILabel!
     @IBOutlet weak var lbl_address: UILabel!

@@ -13,7 +13,7 @@ class ListViewController: BaseViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     
@@ -53,8 +53,8 @@ extension ListViewController: ListInterface {
         
         self.workshops.append(contentsOf: workshops)
         
-        tableView.performBatchUpdates({ () -> Void in
-            self.tableView.insertRows(at: indexPaths, with: .automatic)
+        collectionView.performBatchUpdates({ () -> Void in
+            collectionView.insertItems(at: indexPaths)
         }, completion: nil)
     }
     
@@ -64,20 +64,20 @@ extension ListViewController: ListInterface {
     
 }
 
-extension ListViewController: UITableViewDataSource, UITableViewDelegate {
+extension ListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return workshops.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath) as WorkshopCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as WorkshopCell
         cell.setup(with: workshops[indexPath.row])
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.didSelect(workshop: workshops[indexPath.row])
     }
     
