@@ -28,8 +28,7 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set navigationBar
-        setupNavBar(.detail)
+        self.title = workshop.name
         
         // Set header
         setupHeader()
@@ -39,13 +38,7 @@ class DetailViewController: BaseViewController {
     }
     
     // MARK: - Setups
-    
-    override func setupNavBar(_ type: NavType) {
-        super.setupNavBar(type)
         
-        self.title = workshop.name
-    }
-    
     func setupHeader() {
         // Set strech header view
         let headerSize = CGSize(width: collectionView!.frame.size.width, height: 667)

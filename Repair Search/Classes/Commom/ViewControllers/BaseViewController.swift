@@ -14,21 +14,28 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.delegate = self
     }
     
-    // MARK: - Setups
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
-    func setupNavBar(_ type: NavType) {
-        guard let navControl = self.navigationController else {
-            return
-        }
+}
+
+extension BaseViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         
-        switch type {
-        case .list:
-            navControl.navigationBar.prefersLargeTitles = true
-        case .detail:
-            navControl.navigationBar.prefersLargeTitles = false
-        }
+        navigationController.navigationBar.barStyle                 = .black
+        navigationController.navigationBar.barTintColor             = NAV_COLOR
+        navigationController.navigationBar.tintColor                = WHITE_COLOR
+        navigationController.navigationBar.titleTextAttributes      = NAV_TEXT_ATT
+        navigationController.navigationBar.largeTitleTextAttributes = NAV_TEXT_ATT
+        navigationController.navigationBar.prefersLargeTitles       = true
+        navigationController.navigationBar.isTranslucent            = false
+        navigationController.navigationBar.shadowImage              = UIImage()
     }
     
 }

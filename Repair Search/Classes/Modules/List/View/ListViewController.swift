@@ -25,24 +25,16 @@ class ListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set navigationBar
-        setupNavBar(.list)
-        
-        // Call presenter viewDidLoad
-        presenter.viewDidLoad(coordinates)
-    }
-    
-    // MARK: - Setups
-    
-    override func setupNavBar(_ type: NavType) {
-        super.setupNavBar(type)
-        
+
         self.title = "Oficinas"
-        self.navigationItem.largeTitleDisplayMode = .automatic
         
-        let rightButton = UIBarButtonItem(image: UIImage(named: "icon_close"), style: .plain, target: self, action: #selector(didTouchOnCloseButton))
-        self.navigationItem.rightBarButtonItem = rightButton
+        let rightButton = UIBarButtonItem(image: ICN_NAV_CLOSE,
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(didTouchOnCloseButton))
+        self.navigationItem.setRightBarButton(rightButton, animated: true)
+        
+        presenter.viewDidLoad(coordinates)
     }
     
     // MARK: Actions
