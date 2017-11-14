@@ -18,6 +18,8 @@ let BASE_GM_SERVICE = "https://maps.googleapis.com/maps/api/place/"
 let ICN_NAV_BACK  = UIImage(named: "icn_nav_back")
 let ICN_NAV_CLOSE = UIImage(named: "icn_nav_close")
 
+let ICN_MAP_CAR   = UIImage(named:"icn_map_car")
+
 // MARK: - Colors
 
 let NAV_COLOR    = UIColor(hex: "212121")

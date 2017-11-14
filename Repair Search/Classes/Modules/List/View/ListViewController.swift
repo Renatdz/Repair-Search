@@ -37,6 +37,15 @@ class ListViewController: BaseViewController {
         presenter.viewDidLoad(coordinates)
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.itemSize = CGSize(width: collectionView.frame.width, height: 100)
+            flowLayout.invalidateLayout()
+        }
+    }
+    
     // MARK: Actions
     
     @objc func didTouchOnCloseButton() {

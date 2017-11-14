@@ -27,7 +27,6 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set MapView
         setupMapView()
     }
     
@@ -69,7 +68,7 @@ class MapViewController: BaseViewController {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(workshop.latitude, workshop.longitude)
         marker.appearAnimation = .pop
-        marker.icon = UIImage(named:"icon_map_car")
+        marker.icon = ICN_MAP_CAR
         marker.title = workshop.name
         marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.5)
         marker.map = mapView

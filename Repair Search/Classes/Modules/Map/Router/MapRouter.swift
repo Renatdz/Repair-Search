@@ -38,7 +38,6 @@ extension MapRouter: MapWireframe {
         router.viewController = viewController
         
         window.rootViewController = viewController
-        window.makeKeyAndVisible()
     }
     
     func presentListModule(_ coordinates: CLLocationCoordinate2D) {
