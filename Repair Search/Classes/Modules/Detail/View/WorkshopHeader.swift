@@ -15,6 +15,7 @@ class WorkshopHeader: UICollectionViewCell {
     // MARK: - Outlets
     
     @IBOutlet weak var viw_minimalInformation: UIView!
+    @IBOutlet weak var viw_reviews: UIView!
     
     @IBOutlet weak var gmp_mapView: GMSMapView!
     @IBOutlet weak var cmv_workshopRating: CosmosView!
@@ -53,6 +54,10 @@ class WorkshopHeader: UICollectionViewCell {
         setupMinimumInformationView()
         
         setupGeneralInformationView(wasDataFetched)
+        
+        if self.workshop.reviews.count > 0 {
+            viw_reviews.isHidden = false
+        }
     }
     
     func setupMapView() {

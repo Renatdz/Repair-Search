@@ -507,7 +507,7 @@
                                                 <constraint firstItem="XOs-hH-wg9" firstAttribute="top" secondItem="cKz-w3-pjw" secondAttribute="bottom" constant="9" id="yqM-7X-FDI"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PkL-O9-X6q">
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PkL-O9-X6q">
                                             <rect key="frame" x="97" y="477" width="181" height="70"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_slide" translatesAutoresizingMaskIntoConstraints="NO" id="UjW-NL-oYl">
@@ -563,6 +563,7 @@
                                         <outlet property="lbl_workshopPhone" destination="cKz-w3-pjw" id="dWE-7E-sFj"/>
                                         <outlet property="lbl_workshopSite" destination="XOs-hH-wg9" id="IUI-rd-rIt"/>
                                         <outlet property="viw_minimalInformation" destination="tKP-2d-8JC" id="e5s-hI-85v"/>
+                                        <outlet property="viw_reviews" destination="PkL-O9-X6q" id="L1a-pe-p5B"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
