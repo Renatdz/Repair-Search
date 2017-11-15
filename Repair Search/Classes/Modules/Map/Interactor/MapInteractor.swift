@@ -8,6 +8,8 @@
 
 class MapInteractor {
     
+    // MARK: - Properties
+    
     weak var output: MapInteractorOutput?
     var placesAPIManager: PlacesAPIManageable!
     

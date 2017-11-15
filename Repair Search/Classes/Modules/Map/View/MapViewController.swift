@@ -13,6 +13,8 @@ class MapViewController: BaseViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var noContentView: UIView!
+    @IBOutlet weak var deniedPermissionView: UIView!
     @IBOutlet weak var mapView: GMSMapView!
     
     // MARK: - Properties
@@ -27,7 +29,6 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set MapView
         setupMapView()
     }
     
@@ -69,7 +70,7 @@ class MapViewController: BaseViewController {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(workshop.latitude, workshop.longitude)
         marker.appearAnimation = .pop
-        marker.icon = UIImage(named:"icon_map_car")
+        marker.icon = ICN_MAP_CAR
         marker.title = workshop.name
         marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.5)
         marker.map = mapView
@@ -80,6 +81,20 @@ class MapViewController: BaseViewController {
     
     @IBAction func didTouchOnListButton(_ sender: Any) {
         presenter.didTouchOnListAction(coordinates)
+    }
+    
+    @IBAction func givePermission(_ sender: Any) {
+        guard let url = URL(string: UIApplicationOpenSettingsURLString) else { return }
+     
+        guard UIApplication.shared.canOpenURL(url) else { return }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func didTouchOnTryAgain(_ sender: Any) {
+        self.view.sendSubview(toBack: noContentView)
+        
+        presenter.didRefreshCoordinates(coordinates)
     }
     
 }
@@ -95,17 +110,32 @@ extension MapViewController: MapInterface {
     }
     
     func showNoContentView() {
-        
+        self.view.bringSubview(toFront: noContentView)
     }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
-        if status == CLAuthorizationStatus.authorizedWhenInUse {
+        switch status {
+        case .authorizedWhenInUse:
+            self.view.sendSubview(toBack: deniedPermissionView)
             mapView.isMyLocationEnabled = true
+        case .denied:
+            self.view.bringSubview(toFront: deniedPermissionView)
+        default:
+            break
         }
+    }
+    
+}
+
+extension MapViewController: GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        guard let workshop = marker.userData as? Workshop else { return }
+        
+        presenter.didTapOnMarkerAction(workshop)
     }
     
 }

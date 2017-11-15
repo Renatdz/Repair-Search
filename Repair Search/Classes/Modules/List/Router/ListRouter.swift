@@ -42,7 +42,7 @@ extension ListRouter: ListWireframe {
     }
     
     func presentDetailModule(workshop: Workshop) {
-        let detailModule = DetailRouter.assembleModule(with: workshop)
+        let detailModule = DetailRouter.assembleModule(with: workshop, style: .push)
         viewController?.navigationController?.pushViewController(detailModule, animated: true)
     }
     

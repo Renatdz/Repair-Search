@@ -8,6 +8,8 @@
 
 class ListInteractor {
     
+    // MARK: - Properties
+    
     weak var output: ListInteractorOutput?
     var placesAPIManager: PlacesAPIManageable!
     

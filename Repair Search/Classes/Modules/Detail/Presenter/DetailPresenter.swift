@@ -22,6 +22,18 @@ extension DetailPresenter: DetailPresentation {
         interactor.fetchDetailContent(id: id)
     }
     
+    func didTouchOnTryAgainAction(id: String) {
+        interactor.fetchDetailContent(id: id)
+    }
+    
+    func didSelect(review: Review) {
+        router.presentReviewDetails(review: review)
+    }
+    
+    func didTouchOnCloseAction() {
+        router.closeDetailModule()
+    }
+    
 }
 
 extension DetailPresenter: DetailInteractorOutput {

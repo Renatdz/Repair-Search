@@ -13,7 +13,7 @@ class ListViewController: BaseViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     
@@ -25,24 +25,25 @@ class ListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = "Oficinas"
         
-        // Set navigationBar
-        setupNavBar(.list)
+        let rightButton = UIBarButtonItem(image: ICN_NAV_CLOSE,
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(didTouchOnCloseButton))
+        self.navigationItem.setRightBarButton(rightButton, animated: true)
         
-        // Call presenter viewDidLoad
         presenter.viewDidLoad(coordinates)
     }
     
-    // MARK: - Setups
-    
-    override func setupNavBar(_ type: NavType) {
-        super.setupNavBar(type)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
-        self.title = "Oficinas"
-        self.navigationItem.largeTitleDisplayMode = .automatic
-        
-        let rightButton = UIBarButtonItem(image: UIImage(named: "icon_close"), style: .plain, target: self, action: #selector(didTouchOnCloseButton))
-        self.navigationItem.rightBarButtonItem = rightButton
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.itemSize = CGSize(width: collectionView.frame.width, height: 100)
+            flowLayout.invalidateLayout()
+        }
     }
     
     // MARK: Actions
@@ -61,8 +62,8 @@ extension ListViewController: ListInterface {
         
         self.workshops.append(contentsOf: workshops)
         
-        tableView.performBatchUpdates({ () -> Void in
-            self.tableView.insertRows(at: indexPaths, with: .automatic)
+        collectionView.performBatchUpdates({ () -> Void in
+            collectionView.insertItems(at: indexPaths)
         }, completion: nil)
     }
     
@@ -72,20 +73,20 @@ extension ListViewController: ListInterface {
     
 }
 
-extension ListViewController: UITableViewDataSource, UITableViewDelegate {
+extension ListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return workshops.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath) as WorkshopCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as WorkshopCell
         cell.setup(with: workshops[indexPath.row])
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.didSelect(workshop: workshops[indexPath.row])
     }
     

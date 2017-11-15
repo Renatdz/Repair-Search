@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class DetailRouter {
+class DetailRouter: NSObject {
     
     // MARK: - Properties
     
@@ -18,7 +19,7 @@ class DetailRouter {
 
 extension DetailRouter: DetailWireframe {
     
-    static func assembleModule(with workshop: Workshop) -> UIViewController {
+    static func assembleModule(with workshop: Workshop, style: PresentStyle) -> UIViewController {
         let storyboard     = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(DetailViewController.self)
         
@@ -31,6 +32,7 @@ extension DetailRouter: DetailWireframe {
         presenter.interface  = viewController
         
         viewController.presenter = presenter
+        viewController.style     = style
         viewController.workshop  = workshop
         
         interactor.output = presenter
@@ -40,7 +42,22 @@ extension DetailRouter: DetailWireframe {
         return viewController
     }
     
+    func presentReviewDetails(review: Review) {
+        guard let url = URL(string: review.authorUrl) else { return }
+        
+        let svc = SFSafariViewController(url: url)
+        viewController?.present(svc, animated: true, completion: nil)
+    }
+    
     func closeDetailModule() {
+        viewController?.dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+extension DetailRouter: SFSafariViewControllerDelegate {
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         viewController?.dismiss(animated: true, completion: nil)
     }
     

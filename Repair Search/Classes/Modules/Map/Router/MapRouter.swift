@@ -38,7 +38,6 @@ extension MapRouter: MapWireframe {
         router.viewController = viewController
         
         window.rootViewController = viewController
-        window.makeKeyAndVisible()
     }
     
     func presentListModule(_ coordinates: CLLocationCoordinate2D) {
@@ -46,6 +45,13 @@ extension MapRouter: MapWireframe {
         let navListModule = UINavigationController(rootViewController: listModule)
         
         viewController?.present(navListModule, animated: true, completion: nil)
+    }
+    
+    func presentDetailModule(_ workshop: Workshop) {
+        let detailModule    = DetailRouter.assembleModule(with: workshop, style: .present)
+        let navDetailModule = UINavigationController(rootViewController: detailModule)
+        
+        viewController?.present(navDetailModule, animated: true, completion: nil)
     }
     
 }

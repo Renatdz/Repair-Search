@@ -14,7 +14,7 @@ struct Workshop {
     var placeId   : String!
     var name      : String!
     var icon      : String!
-    var openNow   : Bool!
+    var isOpenNow : Bool!
     var latitude  : Double!
     var longitude : Double!
     var vicinity  : String!
@@ -26,20 +26,20 @@ struct Workshop {
     var reviews   : [Review]!
     
     init() {
-        self.id        = nil
-        self.placeId   = nil
-        self.name      = nil
-        self.icon      = nil
-        self.openNow   = false
-        self.latitude  = nil
-        self.longitude = nil
-        self.vicinity  = nil
-        self.address   = nil
-        self.phone     = nil
-        self.rating    = 0
-        self.url       = nil
-        self.website   = nil
-        self.reviews   = [Review]()
+        id        = nil
+        placeId   = nil
+        name      = nil
+        icon      = nil
+        isOpenNow = false
+        latitude  = nil
+        longitude = nil
+        vicinity  = nil
+        address   = nil
+        phone     = nil
+        rating    = 0
+        url       = nil
+        website   = nil
+        reviews   = [Review]()
     }
     
     init(_ dict: NSDictionary) {
@@ -62,8 +62,8 @@ struct Workshop {
         }
         
         if let openingHours = dict["opening_hours"] as? NSDictionary {
-            if let openNow = openingHours["open_now"] as? Bool {
-                self.openNow = openNow
+            if let isOpenNow = openingHours["open_now"] as? Bool {
+                self.isOpenNow = isOpenNow
             }
         }
         

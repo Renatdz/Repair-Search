@@ -24,6 +24,7 @@ protocol MapPresentation: class {
     
     func didRefreshCoordinates(_ coordinates: CLLocationCoordinate2D)
     func didTouchOnListAction(_ coordinates: CLLocationCoordinate2D)
+    func didTapOnMarkerAction(_ workshop: Workshop)
 }
 
 protocol MapUseCase: class {
@@ -43,4 +44,5 @@ protocol MapWireframe: class {
     
     static func assembleModule(with window: UIWindow)
     func presentListModule(_ coordinates: CLLocationCoordinate2D)
+    func presentDetailModule(_ workshop: Workshop)
 }

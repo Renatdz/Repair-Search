@@ -7,59 +7,60 @@
 //
 
 import UIKit
-import GSKStretchyHeaderView
-import SafariServices
 
 class DetailViewController: BaseViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var noContentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
-    
-    var stretchyHeaderView: WorkshopHeaderView!
+
     var presenter: DetailPresentation!
+    var style: PresentStyle!
     var workshop: Workshop!
     var heights: [CGFloat]! = []
+    var wasFetched: Bool!   = false
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set navigationBar
-        setupNavBar(.detail)
+        self.title = workshop.name
         
-        // Set header
-        setupHeader()
+        if style == .present {
+            let rightButton = UIBarButtonItem(image: ICN_NAV_CLOSE,
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(didTouchOnCloseButton))
+            self.navigationItem.setRightBarButton(rightButton, animated: true)
+        }
         
-        // Call presenter viewDidLoad
         presenter.viewDidLoad(id: workshop.placeId)
     }
     
-    // MARK: - Setups
-    
-    override func setupNavBar(_ type: NavType) {
-        super.setupNavBar(type)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
-        self.title = workshop.name
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.invalidateLayout()
+        }
     }
     
-    func setupHeader() {
-        // Set strech header view
-        let headerSize = CGSize(width: collectionView!.frame.size.width, height: 667)
-        
-        self.stretchyHeaderView = WorkshopHeaderView(frame: CGRect(x: 0, y: 0, width: headerSize.width, height: headerSize.height))
-        
-        let nibViews: [UIView] = Bundle.main.loadNibNamed("WorkshopHeaderView", owner: self, options: nil) as! [UIView]
-        self.stretchyHeaderView = nibViews.first as! WorkshopHeaderView!
-        
-        self.stretchyHeaderView.setHeader(with: self.workshop)
-        
-        self.collectionView?.addSubview(self.stretchyHeaderView)
+    // MARK: Actions
+    
+    @IBAction func didTouchOnTryAgainButton(_ sender: Any) {
+        self.view.sendSubview(toBack: noContentView)
+    
+        presenter.didTouchOnTryAgainAction(id: workshop.placeId)
     }
     
+    @objc func didTouchOnCloseButton() {
+        presenter.didTouchOnCloseAction()
+    }
+
 }
 
 extension DetailViewController: DetailInterface {
@@ -67,23 +68,25 @@ extension DetailViewController: DetailInterface {
     func showDetailContent(_ workshop: Workshop) {
         let (start, end) = (self.workshop.reviews.count, workshop.reviews.count + self.workshop.reviews.count)
         let indexPaths = (start..<end).map { return IndexPath(row: $0, section: 0) }
-            
-        self.workshop = workshop
+        
+        self.workshop   = workshop
         
         for review in self.workshop!.reviews {
             let height = SizingCell.review(with: review)
             heights.append(height)
         }
-            
+        
+        wasFetched = true
+        
         collectionView.performBatchUpdates({ () -> Void in
-            self.collectionView.insertItems(at: indexPaths)
-        }, completion: { (finished) -> Void in
-            self.stretchyHeaderView.setHeader(with: self.workshop)
+            collectionView.insertItems(at: indexPaths)
+        }, completion: { _ in
+            self.collectionView.reloadSections(IndexSet(0...0))
         })
     }
     
     func showNoContentView() {
-        
+        self.view.bringSubview(toFront: noContentView)
     }
     
 }
@@ -94,21 +97,23 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         return workshop.reviews.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var header = WorkshopHeader()
+        
+        if kind == UICollectionElementKindSectionHeader {
+            header = collectionView.dequeueReusableView(of: kind, for: indexPath) as WorkshopHeader
+            header.setup(with: workshop, wasDataFetched: wasFetched)
+        }
+        
+        return header
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCell(for: indexPath) as ReviewCell
         cell.setup(workshop.reviews[indexPath.row])
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let review = workshop.reviews[indexPath.item]
-        
-        if let url = URL(string: review.authorUrl) {
-            let svc = SFSafariViewController(url: url)
-            self.present(svc, animated: true, completion: nil)
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -118,12 +123,9 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         return CGSize(width: collectionView.bounds.size.width, height: height)
     }
     
-}
-
-extension DetailViewController: SFSafariViewControllerDelegate {
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        self.dismiss(animated: true, completion: nil)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let review = workshop.reviews[indexPath.item]
+        presenter.didSelect(review: review)
     }
     
 }

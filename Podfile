@@ -12,7 +12,6 @@ def project_pods
     pod 'AlamofireNetworkActivityIndicator'
 
     # - Used in UX DetailViewController
-    pod 'GSKStretchyHeaderView'
     pod 'Cosmos'
 
     # - Used in cells

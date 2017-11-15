@@ -10,6 +10,7 @@ import UIKit
 
 protocol DetailInterface: class {
     var presenter: DetailPresentation! { get set }
+    var style: PresentStyle!           { get set }
     var workshop: Workshop!            { get set }
     var heights: [CGFloat]!            { get set }
     
@@ -23,6 +24,9 @@ protocol DetailPresentation: class {
     var interactor: DetailUseCase!       { get set }
     
     func viewDidLoad(id: String)
+    func didTouchOnTryAgainAction(id: String)
+    func didSelect(review: Review)
+    func didTouchOnCloseAction()
 }
 
 protocol DetailUseCase: class {
@@ -40,6 +44,7 @@ protocol DetailInteractorOutput: class {
 protocol DetailWireframe: class {
     weak var viewController: UIViewController? { get set }
     
-    static func assembleModule(with workshop: Workshop) -> UIViewController
+    static func assembleModule(with workshop: Workshop, style: PresentStyle) -> UIViewController
+    func presentReviewDetails(review: Review)
     func closeDetailModule()
 }
