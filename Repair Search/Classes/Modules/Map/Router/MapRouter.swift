@@ -47,4 +47,11 @@ extension MapRouter: MapWireframe {
         viewController?.present(navListModule, animated: true, completion: nil)
     }
     
+    func presentDetailModule(_ workshop: Workshop) {
+        let detailModule    = DetailRouter.assembleModule(with: workshop, style: .present)
+        let navDetailModule = UINavigationController(rootViewController: detailModule)
+        
+        viewController?.present(navDetailModule, animated: true, completion: nil)
+    }
+    
 }

@@ -18,6 +18,7 @@ class DetailViewController: BaseViewController {
     // MARK: - Properties
 
     var presenter: DetailPresentation!
+    var style: PresentStyle!
     var workshop: Workshop!
     var heights: [CGFloat]! = []
     var wasFetched: Bool!   = false
@@ -29,6 +30,14 @@ class DetailViewController: BaseViewController {
         
         self.title = workshop.name
         
+        if style == .present {
+            let rightButton = UIBarButtonItem(image: ICN_NAV_CLOSE,
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(didTouchOnCloseButton))
+            self.navigationItem.setRightBarButton(rightButton, animated: true)
+        }
+        
         presenter.viewDidLoad(id: workshop.placeId)
     }
     
@@ -38,6 +47,12 @@ class DetailViewController: BaseViewController {
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.invalidateLayout()
         }
+    }
+    
+    // MARK: Actions
+    
+    @objc func didTouchOnCloseButton() {
+        presenter.didTouchOnCloseAction()
     }
 
 }

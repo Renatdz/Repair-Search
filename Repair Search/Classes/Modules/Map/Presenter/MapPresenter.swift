@@ -38,6 +38,10 @@ extension MapPresenter: MapPresentation {
         router.presentListModule(coordinates)
     }
     
+    func didTapOnMarkerAction(_ workshop: Workshop) {
+        router.presentDetailModule(workshop)
+    }
+    
 }
 
 extension MapPresenter: MapInteractorOutput {

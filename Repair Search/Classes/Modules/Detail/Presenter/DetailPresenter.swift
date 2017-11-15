@@ -22,6 +22,10 @@ extension DetailPresenter: DetailPresentation {
         interactor.fetchDetailContent(id: id)
     }
     
+    func didTouchOnCloseAction() {
+        router.closeDetailModule()
+    }
+    
 }
 
 extension DetailPresenter: DetailInteractorOutput {

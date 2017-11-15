@@ -18,7 +18,7 @@ class DetailRouter {
 
 extension DetailRouter: DetailWireframe {
     
-    static func assembleModule(with workshop: Workshop) -> UIViewController {
+    static func assembleModule(with workshop: Workshop, style: PresentStyle) -> UIViewController {
         let storyboard     = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(DetailViewController.self)
         
@@ -31,6 +31,7 @@ extension DetailRouter: DetailWireframe {
         presenter.interface  = viewController
         
         viewController.presenter = presenter
+        viewController.style     = style
         viewController.workshop  = workshop
         
         interactor.output = presenter

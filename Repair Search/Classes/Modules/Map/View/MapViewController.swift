@@ -108,3 +108,13 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
 }
+
+extension MapViewController: GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        guard let workshop = marker.userData as? Workshop else { return }
+        
+        presenter.didTapOnMarkerAction(workshop)
+    }
+    
+}
