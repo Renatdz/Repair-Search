@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class DetailViewController: BaseViewController {
     
@@ -126,19 +125,7 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let review = workshop.reviews[indexPath.item]
-        
-        if let url = URL(string: review.authorUrl) {
-            let svc = SFSafariViewController(url: url)
-            self.present(svc, animated: true, completion: nil)
-        }
-    }
-    
-}
-
-extension DetailViewController: SFSafariViewControllerDelegate {
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        self.dismiss(animated: true, completion: nil)
+        presenter.didSelect(review: review)
     }
     
 }

@@ -25,6 +25,7 @@ protocol DetailPresentation: class {
     
     func viewDidLoad(id: String)
     func didTouchOnTryAgainAction(id: String)
+    func didSelect(review: Review)
     func didTouchOnCloseAction()
 }
 
@@ -44,5 +45,6 @@ protocol DetailWireframe: class {
     weak var viewController: UIViewController? { get set }
     
     static func assembleModule(with workshop: Workshop, style: PresentStyle) -> UIViewController
+    func presentReviewDetails(review: Review)
     func closeDetailModule()
 }
