@@ -13,6 +13,8 @@ class MapViewController: BaseViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var noContentView: UIView!
+    @IBOutlet weak var deniedPermissionView: UIView!
     @IBOutlet weak var mapView: GMSMapView!
     
     // MARK: - Properties
@@ -81,6 +83,20 @@ class MapViewController: BaseViewController {
         presenter.didTouchOnListAction(coordinates)
     }
     
+    @IBAction func givePermission(_ sender: Any) {
+        guard let url = URL(string: UIApplicationOpenSettingsURLString) else { return }
+     
+        guard UIApplication.shared.canOpenURL(url) else { return }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func didTouchOnTryAgain(_ sender: Any) {
+        self.view.sendSubview(toBack: noContentView)
+        
+        presenter.didRefreshCoordinates(coordinates)
+    }
+    
 }
 
 extension MapViewController: MapInterface {
@@ -94,16 +110,21 @@ extension MapViewController: MapInterface {
     }
     
     func showNoContentView() {
-        
+        self.view.bringSubview(toFront: noContentView)
     }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
-        if status == CLAuthorizationStatus.authorizedWhenInUse {
+        switch status {
+        case .authorizedWhenInUse:
+            self.view.sendSubview(toBack: deniedPermissionView)
             mapView.isMyLocationEnabled = true
+        case .denied:
+            self.view.bringSubview(toFront: deniedPermissionView)
+        default:
+            break
         }
     }
     

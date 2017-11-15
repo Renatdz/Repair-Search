@@ -24,6 +24,7 @@ protocol DetailPresentation: class {
     var interactor: DetailUseCase!       { get set }
     
     func viewDidLoad(id: String)
+    func didTouchOnTryAgainAction(id: String)
     func didTouchOnCloseAction()
 }
 

@@ -13,6 +13,7 @@ class DetailViewController: BaseViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var noContentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
@@ -51,6 +52,12 @@ class DetailViewController: BaseViewController {
     
     // MARK: Actions
     
+    @IBAction func didTouchOnTryAgainButton(_ sender: Any) {
+        self.view.sendSubview(toBack: noContentView)
+    
+        presenter.didTouchOnTryAgainAction(id: workshop.placeId)
+    }
+    
     @objc func didTouchOnCloseButton() {
         presenter.didTouchOnCloseAction()
     }
@@ -80,7 +87,7 @@ extension DetailViewController: DetailInterface {
     }
     
     func showNoContentView() {
-        
+        self.view.bringSubview(toFront: noContentView)
     }
     
 }

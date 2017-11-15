@@ -47,9 +47,7 @@ extension AppDelegate: UIApplicationDelegate {
         
         setupNavBar()
         
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        window?.frame = UIScreen.main.bounds
+        window = UIWindow(frame: UIScreen.main.bounds)
         
         MapRouter.assembleModule(with: window!)
         
